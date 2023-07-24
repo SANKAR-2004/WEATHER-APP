@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&family=Oleo+Script:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&family=Nunito+Sans:ital,wght@1,300&family=Oleo+Script:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    background-color: aquamarine;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1
+{
+    padding:20px;
+    margin:10px;
+}
+.container
+{
+    position: relative;
+    width:350px;
+    background-color:#4e788a;
+    border-radius: 10px;
+    padding:20px;
+    box-shadow: 1px 1px 10px #222;
+}
+.container .loading{
+    
+     position: absolute;
+     width:350px;
+     height:495px;
+     top:65px;
+      left:0px;
+     padding:20px;
+     border-radius: 20px;
+     background-color:#4e788a;
+      box-shadow: 1px 1px 10px #222;
+     
+}
+.loading::before{
+    position: absolute;
+    content: "";
+    top: 42%;
+  left: 44%;
+    width:40px;
+    height:40px;
+  border-radius: 50%;
+  border: 4px solid #ccccccc5;
+  border-top-color:#fff;
+  animation: spin 1s  infinite linear;
+    z-index: 11;
+    
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ 
+ 
+.search
+{
+    display:flex;
+    margin-bottom: 5px;
+    gap:10px;
+}
+#inputcity{
+    width: 100%;
+    padding:15px;
+    border:none;
+    outline: none;
+    height:40px;
+    text-align: center;
+    border-radius: 20%;
+     box-shadow: 1px 1px 10px #222;
+}
+ 
+#btnsearch{
+    padding: 5px 13px;
+    box-shadow: 0px 0px 8px #222;
+    border:0px solid gray;
+    background:#fff;
+  border-radius: 50%;
+}
+
+.extra
+{
+    padding:15px;
+    color:#fff;
+    text-align: center;
+}
+.extra h2{
+    font-size: 50px;
+}
+.extra h3{
+    font-weight: 500;
+    text-transform: capitalize;
+    color:#c7e41a;
+}
+.extra h4
+{
+    font-size:30px;
+    text-transform: capitalize;
+    color:#3fdd81;
+    font-family: 'IBM Plex Serif', serif;
+}
+.windhum{
+    color:#f2f4f4;
+    margin:10px;
+    text-align: center;
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+}
+.windhum span{
+    font-weight: 700;
+}
+.humidity,.wind{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+ 
+}
+.humidity .humicon,.wind .humicon
+{
+    font-size: 34px;
+ 
+}
+.humidity i,p,span{
+    padding:3px;
+
+}
+.wind i,p,span
+{
+    padding:3px;
+}
+.weather  
+{
+    width:100%;
+    padding-top:15px;
+      display: flex;
+      align-items: center;
+     justify-content: center;
+      
+}
+ 
+.weather img{
+    
+    width: 160px;
+    height: 160px;
+}
+.show {
+    display:flex;
+}
+.hide
+{
+    display: none;
+}
+.show2{
+    display: block;
+}
+.humidity i{
+    color:#3de0d9;
+}
+.wind i
+{
+    color:#3de0d9;
+}
+.citylist
+{
+    
+    overflow: auto;
+    
+}
+
+.citylist ul
+{
+  height:180px;
+  width:270px;
+  position: absolute;
+  overflow: auto;
+  
+}
+.citylist ul li
+{
+    padding:10px;
+    border:0.1px solid gray;
+    list-style-type: none;
+      background-color: #fff;
+      cursor: pointer;
+}
+/*Scroll Bar*/
+
+::-webkit-scrollbar-track {
+  background:#cdc3c3;
+border-top-left-radius: 2px; /* Rounded corners */
+ border-bottom-left-radius: 2px; 
+ 
+  /* Change the background color of the track */
+}
+
+/* Styling the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color:#555; /* Change the color of the thumb */
+ border-top-left-radius: 2px; /* Rounded corners */
+ border-bottom-left-radius: 2px; 
+  
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+/* Styling the scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Change the color of the thumb on hover */
+}

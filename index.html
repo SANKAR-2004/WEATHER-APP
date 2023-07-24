@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div class="container">
+      <span class="loading hide"></span>
+          <div class="search">
+            <input type="text" id="inputcity" placeholder="Enter City">
+            <button id="btnsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="citylist">
+            <ul id="suggestions">
+              
+            </ul>
+          </div>
+          <div class="weather hide">
+            <img src="" alt="weather" id="weatherimg">
+          </div>
+          <div class="extra hide">
+            <h2> </h2>
+            <h4> </h4>
+            <h3> </h3>
+          </div>
+          <div class="windhum hide">
+            <div class="humidity">
+              <div class="humicon">
+                        <i class="fa-solid fa-droplet"></i>
+              </div>
+             <div class="humextra">
+                <p></p>
+                <span>Humidity</span>
+             </div>
+                
+            </div>
+             <div class="wind">
+              <div class="humicon">
+                <i class="fa-solid fa-wind"></i>
+                </div>
+                <div class="humextra">
+                <p></p>
+                <span>Wind</span>
+                </div>
+            </div>
+          </div>
+
+    </div>
+
+
+    <script src="./script.js">
+    </script>
+</body>
+</html>
+ 
