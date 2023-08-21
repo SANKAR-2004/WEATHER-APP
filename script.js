@@ -1,4 +1,4 @@
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+ //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 //const apikey = "a62c7277b464b130cfcaae8a64c3bc62";
 const citynamejsondata = [
   {
@@ -6133,7 +6133,8 @@ const wind = document.querySelector(".wind p");
 const humidity = document.querySelector(".humidity p");
 const cityname = document.querySelector(".extra h3");
 const fullcityname = document.querySelectorAll("#suggestions li");
-const suggestionsList = document.getElementById("suggestions");
+const suggestionsList = document.querySelectorAll("#suggestions li");
+ const suggestionsList2 = document.querySelector("#suggestions");
  
  //Showing Cities
 
@@ -6242,14 +6243,13 @@ btnsearch.addEventListener('click', () => {
 
 //------------------------------------------------------
 
-
+suggestionsList2.innerHTML = "";
 
 inputcity.addEventListener("input", () => {
  
  
   const searchText = inputcity.value.trim();
-  suggestionsList.innerHTML = "";
-  
+  suggestionsList2.innerHTML = "";
   if (searchText.length === 0) {
     return;
   }
@@ -6260,13 +6260,11 @@ inputcity.addEventListener("input", () => {
     suggestions.forEach((suggestion) => {
       const li = document.createElement("li");
       li.textContent = suggestion.name;
-      suggestionsList.appendChild(li);
+      suggestionsList2.appendChild(li);
     });
   }
   else {
-     const li = document.createElement("li");
-     li.textContent ="No Results Found";
-     suggestionsList.appendChild(li);
+    return;
   }
 
 
@@ -6282,34 +6280,33 @@ function getSuggestions(searchText) {
   );
 }
 
-//-----------------------------------------------
+//-------------------------------------- 
 
- suggestionsList.addEventListener("click", (event) => {
-   
-   
-   if (event.target.textContent == "No Results Found") {
-     alert("Enter Correct City Name!!!");
-     suggestionsList.innerHTML = "";
-     inputcity.value = "";
-   }
-   else {
-     setTimeout(getloader, 100);
-     setTimeout(() => {
-       loaderelement.classList.add("hide");
-     }, 1000);
-     inputcity.value = event.target.textContent;
-     let city = inputcity.value;
-     let apirurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a62c7277b464b130cfcaae8a64c3bc62&units=metric`;
-     suggestionsList.innerHTML = "";
-     weatherimgdiv.classList.remove("hide");
-     weatherimgdiv.classList.add("show");
-     extradiv.classList.remove("hide");
-     extradiv.classList.add("show2");
-     windhumdiv.classList.remove("hide");
-     windhumdiv.classList.add("show");
-
-     getweather(apirurl, inputcity.value);
-   }
- });
+  suggestionsList2.addEventListener("click", (event) => {
+  
+    if (event.target.textContent == "No Results Found") {
+      alert("Enter Correct City Name!!!");
+      suggestionsList2.innerHTML = "";
+      inputcity.value = "";
+    } else if(inputcity.value.trim()!="") {
+      suggestionsList.innerHTML = "";
+      setTimeout(getloader, 100);
+      setTimeout(() => {
+        loaderelement.classList.add("hide");
+      }, 1000);
+      inputcity.value = event.target.textContent;
+      let city = inputcity.value;
+      let apirurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a62c7277b464b130cfcaae8a64c3bc62&units=metric`;
+      suggestionsList2.innerHTML = "";
+      weatherimgdiv.classList.remove("hide");
+      weatherimgdiv.classList.add("show");
+      extradiv.classList.remove("hide");
+      extradiv.classList.add("show2");
+      windhumdiv.classList.remove("hide");
+      windhumdiv.classList.add("show");
+     // console.log("WW");
+      getweather(apirurl, inputcity.value);
+    }
+  });
 
  
